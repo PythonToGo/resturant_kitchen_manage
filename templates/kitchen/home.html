@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title%}Home - Restaurant Kitchen{% endblock %}
+{% block content%}
+<h1>Welcome to Restaurant Kitchen Service</h1>
+<p>Manage your dishes and cooks easily!</p>
+<a href="{% url 'dish-list' %}" class="btn btn-primary">View Dishes</a>
+{% endblock%}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Dishes{% endblock %}
+{% block content %}
+<h2>Dish List</h2>
+<table class="table table-striped">
+  {% for dish in dishes %}
+    <tr>
+      <td>{{ dish.name }}</td>
+      <td>{{ dish.price}}</td>
+      <td><a href="{% url 'dish-detail' dish.id %}">View</a></td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}
