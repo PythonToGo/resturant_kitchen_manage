@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ cook.username }}</h2>
+    <p><strong>Experience:</strong> {{ cook.years_of_experience }} years</p>
+    <h4>Prepared Dishes:</h4>
+    <ul>
+        {% for dish in cook.dishes.all %}
+        <li>{{ dish.name }} ({{ dish.dish_type.name }})</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

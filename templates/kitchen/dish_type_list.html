@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Dish Types</h2>
+    <a href="{% url 'kitchen:dish_type-create' %}" class="btn btn-primary mb-3">Add Dish Type</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dish_type in dish_type_list %}
+            <tr>
+                <td>{{ dish_type.name }}</td>
+                <td>
+                    <a href="{% url 'kitchen:dish_type-update' dish_type.pk %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'kitchen:dish_type-delete' dish_type.pk %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "includes/pagination.html" %}
+</div>
+{% endblock %}

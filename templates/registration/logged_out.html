@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>Logged out!</p>
-
-<a href="{% url 'login'%}">Click here to login again.</a>
+<div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="card p-4 shadow text-center">
+        <h2>Logged Out</h2>
+        <p>You have been successfully logged out.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary mt-3">Login Again</a>
+        <a href="{% url 'kitchen:index' %}" class="btn btn-secondary mt-3">Go to Home</a>
+    </div>
+</div>
 {% endblock %}

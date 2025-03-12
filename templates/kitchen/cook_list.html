@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Cook List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Experience (Years)</th>
+                <th>Profile</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cook in cooks %}
+            <tr>
+                <td>{{ cook.username }}</td>
+                <td>{{ cook.years_of_experience }}</td>
+                <td><a href="{% url 'kitchen:cook-detail' cook.pk %}" class="btn btn-info">View</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "includes/pagination.html" %}
+</div>
+{% endblock %}

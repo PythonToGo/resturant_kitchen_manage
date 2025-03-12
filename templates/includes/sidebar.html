@@ -1,0 +1,25 @@
+<div class="sidenav bg-white shadow p-3">
+    <h4 class="text-center">Kitchen Dashboard</h4>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'kitchen:index' %}">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if '/dish_types/' in request.path %}active{% endif %}" href="{% url 'kitchen:dish_type-list' %}">
+                <i class="fas fa-th-list"></i> Dish Types
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if '/dishes/' in request.path %}active{% endif %}" href="{% url 'kitchen:dish-list' %}">
+                <i class="fas fa-utensils"></i> Dishes
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if '/cooks/' in request.path %}active{% endif %}" href="{% url 'kitchen:cook-list' %}">
+                <i class="fas fa-user-chef"></i> Cooks
+            </a>
+        </li>
+    </ul>
+</div>

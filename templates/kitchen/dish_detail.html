@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ dish.name }}</h2>
+    <p><strong>Description:</strong> {{ dish.description }}</p>
+    <p><strong>Price:</strong> ${{ dish.price }}</p>
+    <p><strong>Dish Type:</strong> {{ dish.dish_type.name }}</p>
+    <h4>Cooks:</h4>
+    <ul>
+        {% for cook in dish.cooks.all %}
+        <li>{{ cook.username }} ({{ cook.years_of_experience }} years)</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'kitchen:dish-update' dish.pk %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'kitchen:dish-delete' dish.pk %}" class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}

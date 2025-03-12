@@ -1,14 +1,32 @@
 {% extends 'base.html' %}
-{% block title %}Dishes{% endblock %}
+
 {% block content %}
-<h2>Dish List</h2>
-<table class="table table-striped">
-  {% for dish in dishes %}
-    <tr>
-      <td>{{ dish.name }}</td>
-      <td>{{ dish.price}}</td>
-      <td><a href="{% url 'dish-detail' dish.id %}">View</a></td>
-    </tr>
-  {% endfor %}
-</table>
+<div class="container mt-4">
+    <h2>Dish List</h2>
+    <form method="get" class="d-flex mb-3">
+        {{ search_form.as_p }}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Dish Type</th>
+                <th>Price</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dish in dish_list %}
+            <tr>
+                <td>{{ dish.name }}</td>
+                <td>{{ dish.dish_type.name }}</td>
+                <td>${{ dish.price }}</td>
+                <td><a href="{% url 'kitchen:dish-detail' dish.pk %}" class="btn btn-info">View</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "includes/pagination.html" %}
+</div>
 {% endblock %}
