@@ -3,7 +3,7 @@
 This is a Django-based web application for managing a restaurant kitchen. It includes features for managing cooks, dishes, and dish types.
 
 ## Architectures
-https://media.mate.academy/Kitchen_Service_d1fcaa4cdb.png![image](https://github.com/user-attachments/assets/cbac57e4-942f-4599-ad60-08da7418d0d2)
+![image](https://github.com/user-attachments/assets/3f887406-4a04-44a7-97df-2a1a43738cf8)
 
 
 ## Features
