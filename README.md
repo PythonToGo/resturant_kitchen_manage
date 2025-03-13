@@ -2,6 +2,10 @@
 
 This is a Django-based web application for managing a restaurant kitchen. It includes features for managing cooks, dishes, and dish types.
 
+## Architectures
+![image](https://github.com/user-attachments/assets/3f887406-4a04-44a7-97df-2a1a43738cf8)
+
+
 ## Features
 
 - **Cooks Management**: Add, update, delete, and view details of cooks.
@@ -81,4 +85,3 @@ This project is licensed under the MIT License. See the [LICENSE.md](django-soft
 
 - [Django](https://www.djangoproject.com/)
 - [Soft UI Dashboard](https://app-generator.dev/product/soft-ui-dashboard/django/)
--
