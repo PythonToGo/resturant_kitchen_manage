@@ -81,3 +81,4 @@ This project is licensed under the MIT License. See the [LICENSE.md](django-soft
 
 - [Django](https://www.djangoproject.com/)
 - [Soft UI Dashboard](https://app-generator.dev/product/soft-ui-dashboard/django/)
+-
