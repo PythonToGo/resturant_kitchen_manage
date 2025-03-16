@@ -1,4 +1,58 @@
-<div class="sidenav bg-white shadow p-3">
+<div class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start bg-white shadow" id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-xl-none" id="iconSidenav"></i>
+        <a class="navbar-brand m-0 text-center" href="{% url 'kitchen:index' %}">
+            <h4 class="font-weight-bold">Kitchen Dashboard</h4>
+        </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+
+    <div class="navbar-collapse w-auto">
+        <ul class="navbar-nav">
+            <!-- Home -->
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'kitchen:index' %}">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-gradient-primary text-center d-flex align-items-center justify-content-center">
+                        <i class="fas fa-home text-white"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Home</span>
+                </a>
+            </li>
+
+            <!-- Dish Types -->
+            <li class="nav-item">
+                <a class="nav-link {% if '/dish_types/' in request.path %}active{% endif %}" href="{% url 'kitchen:dish_type-list' %}">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-gradient-success text-center d-flex align-items-center justify-content-center">
+                        <i class="fas fa-th-list text-white"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Dish Types</span>
+                </a>
+            </li>
+
+            <!-- Dishes -->
+            <li class="nav-item">
+                <a class="nav-link {% if '/dishes/' in request.path %}active{% endif %}" href="{% url 'kitchen:dish-list' %}">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-gradient-warning text-center d-flex align-items-center justify-content-center">
+                        <i class="fas fa-utensils text-white"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Dishes</span>
+                </a>
+            </li>
+
+            <!-- Cooks -->
+            <li class="nav-item">
+                <a class="nav-link {% if '/cooks/' in request.path %}active{% endif %}" href="{% url 'kitchen:cook-list' %}">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-gradient-danger text-center d-flex align-items-center justify-content-center">
+                        <i class="fas fa-user-chef text-white"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Cooks</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% comment %} <div class="sidenav bg-white shadow p-3">
     <h4 class="text-center">Kitchen Dashboard</h4>
     <ul class="nav flex-column">
         <li class="nav-item">
@@ -22,4 +76,4 @@
             </a>
         </li>
     </ul>
-</div>
+</div> {% endcomment %}

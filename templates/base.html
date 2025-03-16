@@ -8,18 +8,43 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-
-  <!-- ✅ Soft UI Dashboard 스타일 적용 -->
-  <link rel="stylesheet" href="{% static 'soft-ui/css/soft-ui-dashboard.css' %}">
   
-  <!-- ✅ 사용자 정의 CSS -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- ✅ FontAwesome 아이콘 추가 -->
+  <link rel="stylesheet" href="{% static 'soft-ui/css/soft-ui-dashboard.css' %}">
+
+  {% if 'style.css' in STATICFILES_DIRS or 'style.css' in STATICFILES_STORAGE %}
+  <link rel="stylesheet" href="{% static 'soft-ui/css/forms.css' %}">  <!-- 사용자가 추가한 CSS -->
+  {% endif %}
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="g-sidenav-show bg-gray-100">
-  
+
+  <!-- ✅ Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'kitchen:index' %}">🍽️ Kitchen Dashboard</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">
+                <i class="fas fa-sign-in-alt"></i> Login
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- Sidebar -->
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
   {% block sidebar %}

@@ -1,13 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2>{% if object %}Edit Cook{% else %}Create Cook{% endif %}</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Save</button>
-        <a href="{% url 'kitchen:cook-list' %}" class="btn btn-secondary">Cancel</a>
-    </form>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h2 class="text-center text-gradient text-primary">
+                        {% if object %}Edit Cook{% else %}Create Cook{% endif %}
+                    </h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            {{ form.as_p }}
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success me-2">
+                                <i class="fas fa-save"></i> Save
+                            </button>
+                            <a href="{% url 'kitchen:cook-list' %}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
