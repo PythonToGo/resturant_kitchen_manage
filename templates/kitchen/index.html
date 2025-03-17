@@ -1,33 +1,116 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-center">Welcome to the Kitchen Dashboard</h2>
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <div class="card">
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-12 text-center mb-4">
+            <h2 class="text-dark">Welcome to the Kitchen Dashboard</h2>
+            {% if request.user.is_authenticated %}
+                <p class="text-muted">Logged in as <strong>{{ request.user.username }}</strong></p>
+                <a href="{% url 'logout' %}" class="btn btn-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Total Cooks -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow border-0">
                 <div class="card-body text-center">
-                    <h5>Total Cooks</h5>
-                    <h2>{{ context.0.num_cooks }}</h2>
+                    <div class="icon icon-shape bg-gradient-primary text-white rounded-circle shadow mb-3 mx-auto">
+                        <i class="fas fa-user-tie fa-2x"></i>
+                    </div>
+                    <h5 class="text-uppercase text-dark font-weight-bold">Total Cooks</h5>
+                    <h2 class="text-primary font-weight-bold">{{ context.0.num_cooks }}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
+
+        <!-- Total Dishes -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow border-0">
                 <div class="card-body text-center">
-                    <h5>Total Dishes</h5>
-                    <h2>{{ context.0.num_dishes }}</h2>
+                    <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow mb-3 mx-auto">
+                        <i class="fas fa-utensils fa-2x"></i>
+                    </div>
+                    <h5 class="text-uppercase text-dark font-weight-bold">Total Dishes</h5>
+                    <h2 class="text-warning font-weight-bold">{{ context.0.num_dishes }}</h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
+
+        <!-- Total Dish Types -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow border-0">
                 <div class="card-body text-center">
-                    <h5>Total Dish Types</h5>
-                    <h2>{{ context.0.num_dish_types.count }}</h2>
+                    <div class="icon icon-shape bg-gradient-success text-white rounded-circle shadow mb-3 mx-auto">
+                        <i class="fas fa-th-list fa-2x"></i>
+                    </div>
+                    <h5 class="text-uppercase text-dark font-weight-bold">Total Dish Types</h5>
+                    <h2 class="text-success font-weight-bold">{{ context.0.num_dish_types.count }}</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-bl-12 text-center mb-4">
+            <h2 class="text-dark">Welcome to the Kitchen Dashboard</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Total Cooks -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow border-0">
+                <div class="card-body text-center">
+                    <div class="icon icon-shape bg-gradient-primary text-white rounded-circle shadow mb-3 mx-auto">
+                        <i class="fas fa-user-chef fa-2x"></i>
+                    </div>
+                    <h5 class="text-uppercase text-dark font-weight-bold">Total Cooks</h5>
+                    <h2 class="text-primary font-weight-bold">{{ context.0.num_cooks }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Dishes -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow border-0">
+                <div class="card-body text-center">
+                    <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow mb-3 mx-auto">
+                        <i class="fas fa-utensils fa-2x"></i>
+                    </div>
+                    <h5 class="text-uppercase text-dark font-weight-bold">Total Dishes</h5>
+                    <h2 class="text-warning font-weight-bold">{{ context.0.num_dishes }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Dish Types -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow border-0">
+                <div class="card-body text-center">
+                    <div class="icon icon-shape bg-gradient-success text-white rounded-circle shadow mb-3 mx-auto">
+                        <i class="fas fa-th-list fa-2x"></i>
+                    </div>
+                    <h5 class="text-uppercase text-dark font-weight-bold">Total Dish Types</h5>
+                    <h2 class="text-success font-weight-bold">{{ context.0.num_dish_types.count }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% endcomment %}

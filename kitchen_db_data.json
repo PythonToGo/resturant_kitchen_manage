@@ -1,0 +1,293 @@
+[
+    {
+        "model": "kitchen.dishtype",
+        "pk": 1,
+        "fields": {
+            "name": "Italian"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 2,
+        "fields": {
+            "name": "Korean"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 3,
+        "fields": {
+            "name": "Japanese"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 4,
+        "fields": {
+            "name": "Mexican"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 5,
+        "fields": {
+            "name": "Chinese"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 6,
+        "fields": {
+            "name": "French"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 7,
+        "fields": {
+            "name": "Indian"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 8,
+        "fields": {
+            "name": "Thai"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 9,
+        "fields": {
+            "name": "Spanish"
+        }
+    },
+    {
+        "model": "kitchen.dishtype",
+        "pk": 10,
+        "fields": {
+            "name": "American"
+        }
+    },
+
+    {
+        "model": "kitchen.cook",
+        "pk": 1,
+        "fields": {
+            "username": "chef1",
+            "first_name": "Gordon",
+            "last_name": "Ramsay",
+            "years_of_experience": 15,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword1"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 2,
+        "fields": {
+            "username": "chef2",
+            "first_name": "Jamie",
+            "last_name": "Oliver",
+            "years_of_experience": 10,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword2"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 3,
+        "fields": {
+            "username": "chef3",
+            "first_name": "Wolfgang",
+            "last_name": "Puck",
+            "years_of_experience": 20,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword3"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 4,
+        "fields": {
+            "username": "chef4",
+            "first_name": "Heston",
+            "last_name": "Blumenthal",
+            "years_of_experience": 18,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword4"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 5,
+        "fields": {
+            "username": "chef5",
+            "first_name": "Nobu",
+            "last_name": "Matsuhisa",
+            "years_of_experience": 25,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword5"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 6,
+        "fields": {
+            "username": "chef6",
+            "first_name": "Thomas",
+            "last_name": "Keller",
+            "years_of_experience": 30,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword6"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 7,
+        "fields": {
+            "username": "chef7",
+            "first_name": "Daniel",
+            "last_name": "Humm",
+            "years_of_experience": 12,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword7"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 8,
+        "fields": {
+            "username": "chef8",
+            "first_name": "Massimo",
+            "last_name": "Bottura",
+            "years_of_experience": 22,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword8"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 9,
+        "fields": {
+            "username": "chef9",
+            "first_name": "Alain",
+            "last_name": "Ducasse",
+            "years_of_experience": 35,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword9"
+        }
+    },
+    {
+        "model": "kitchen.cook",
+        "pk": 10,
+        "fields": {
+            "username": "chef10",
+            "first_name": "Pierre",
+            "last_name": "Gagnaire",
+            "years_of_experience": 28,
+            "password": "pbkdf2_sha256$260000$abc123$randomhashedpassword10"
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 1,
+        "fields": {
+            "name": "Margherita Pizza",
+            "description": "Classic Italian pizza with tomatoes, mozzarella, and basil.",
+            "price": "12.50",
+            "dish_type": 1,
+            "cooks": [1, 2]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 2,
+        "fields": {
+            "name": "Bibimbap",
+            "description": "Korean rice dish with mixed vegetables, beef, and spicy sauce.",
+            "price": "14.00",
+            "dish_type": 2,
+            "cooks": [3, 4]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 3,
+        "fields": {
+            "name": "Sushi Platter",
+            "description": "Assorted sushi selection with fresh fish and rice.",
+            "price": "22.00",
+            "dish_type": 3,
+            "cooks": [5, 6]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 4,
+        "fields": {
+            "name": "Tacos al Pastor",
+            "description": "Mexican tacos with marinated pork, pineapple, and cilantro.",
+            "price": "10.00",
+            "dish_type": 4,
+            "cooks": [7, 8]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 5,
+        "fields": {
+            "name": "Peking Duck",
+            "description": "Traditional Chinese roasted duck with crispy skin.",
+            "price": "30.00",
+            "dish_type": 5,
+            "cooks": [9, 10]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 6,
+        "fields": {
+            "name": "Ratatouille",
+            "description": "Classic French vegetable stew with tomatoes, zucchini, and eggplant.",
+            "price": "18.00",
+            "dish_type": 6,
+            "cooks": [1, 3]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 7,
+        "fields": {
+            "name": "Chicken Tikka Masala",
+            "description": "Indian dish with spiced grilled chicken in creamy tomato sauce.",
+            "price": "16.00",
+            "dish_type": 7,
+            "cooks": [2, 4]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 8,
+        "fields": {
+            "name": "Pad Thai",
+            "description": "Thai stir-fried noodles with shrimp, tofu, and peanuts.",
+            "price": "13.50",
+            "dish_type": 8,
+            "cooks": [5, 7]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 9,
+        "fields": {
+            "name": "Paella",
+            "description": "Spanish seafood rice dish with saffron and vegetables.",
+            "price": "25.00",
+            "dish_type": 9,
+            "cooks": [6, 8]
+        }
+    },
+    {
+        "model": "kitchen.dish",
+        "pk": 10,
+        "fields": {
+            "name": "Cheeseburger",
+            "description": "Classic American cheeseburger with beef patty, cheese, and pickles.",
+            "price": "9.50",
+            "dish_type": 10,
+            "cooks": [9, 10]
+        }
+    }
+]

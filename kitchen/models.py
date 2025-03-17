@@ -25,7 +25,7 @@ class Cook(AbstractUser):
         ordering = ["-years_of_experience"]
 
     def __str__(self):
-        return f"{self.username} ({self.years_of_experience})"
+        return f"{self.first_name} {self.last_name} ({self.years_of_experience})"
 
 
 class Dish(models.Model):

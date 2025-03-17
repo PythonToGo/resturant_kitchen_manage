@@ -3,25 +3,26 @@
     <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
             <li class="page-item">
-                <a class="page-link" href="?page=1">&laquo; First</a>
+                <a class="page-link rounded-pill px-3 py-1" href="?page=1">&laquo; First</a>
             </li>
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                <a class="page-link rounded-pill px-3 py-1" href="?page={{ page_obj.previous_page_number }}">Previous</a>
             </li>
         {% endif %}
 
         <li class="page-item active">
-            <span class="page-link">
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}
+            <span class="page-link bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                  style="width: 40px; height: 40px; font-size: 14px;">
+                {{ page_obj.number }}
             </span>
         </li>
 
         {% if page_obj.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="page-link rounded-pill px-3 py-1" href="?page={{ page_obj.next_page_number }}">Next</a>
             </li>
             <li class="page-item">
-                <a class="page-link" href="?page={{ paginator.num_pages }}">Last &raquo;</a>
+                <a class="page-link rounded-pill px-3 py-1" href="?page={{ paginator.num_pages }}">Last &raquo;</a>
             </li>
         {% endif %}
     </ul>
