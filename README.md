@@ -8,9 +8,9 @@ This is a Django-based web application for managing a restaurant kitchen. It inc
 
 ## Features
 
-- **Cooks Management**: Add, update, delete, and view details of cooks.
-- **Dishes Management**: Add, update, delete, and view details of dishes.
-- **Dish Types Management**: Add, update, delete, and view details of dish types.
+- **Cooks Management**: Add, update, delete, and view details of cooks. (CRUD)
+- **Dishes Management**: Add, update, delete, and view details of dishes. (CRUD)
+- **Dish Types Management**: Add, update, delete, and view details of dish types. (CRUD)
 - **User Authentication**: Login and logout functionality.
 - **Pagination**: Paginated views for lists of cooks, dishes, and dish types.
 
