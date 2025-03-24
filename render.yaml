@@ -1,0 +1,22 @@
+databases:
+  - name: kitchen
+    plan: free
+    databaseName: restaurant_kitchen_db
+    user: restaurant_kitchen_user
+
+services:
+  - type: web
+    plan: free
+    name: restaurant_kitchen_service
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn restaurant_kitchen.asgi:application -k uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kitchen
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
