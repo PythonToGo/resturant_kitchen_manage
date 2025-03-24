@@ -14,6 +14,20 @@ This is a Django-based web application for managing a restaurant kitchen. It inc
 - **User Authentication**: Login and logout functionality.
 - **Pagination**: Paginated views for lists of cooks, dishes, and dish types.
 
+## Usage
+
+- Access the application at [https://restaurant-kitchen-service-6p40.onrender.com](https://restaurant-kitchen-service-6p40.onrender.com)`
+
+
+### 🔐 Test Login Credentials
+
+You can use the following credentials to log in and explore the application:
+
+- **Username**: `admin.user`  
+- **Password**: `1qazcde3`
+
+
+
 ## Project Structure
 restaurant_kitchen/ 
 
