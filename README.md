@@ -8,20 +8,27 @@ This is a Django-based web application for managing a restaurant kitchen. It inc
 
 ## Features
 
-- **Cooks Management**: Add, update, delete, and view details of cooks.
-- **Dishes Management**: Add, update, delete, and view details of dishes.
-- **Dish Types Management**: Add, update, delete, and view details of dish types.
+- **Cooks Management**: Add, update, delete, and view details of cooks. (CRUD)
+- **Dishes Management**: Add, update, delete, and view details of dishes. (CRUD)
+- **Dish Types Management**: Add, update, delete, and view details of dish types. (CRUD)
 - **User Authentication**: Login and logout functionality.
 - **Pagination**: Paginated views for lists of cooks, dishes, and dish types.
 
 ## Project Structure
 restaurant_kitchen/ 
+
 ├── core/ 
+
 ├── home/ 
+
 ├── kitchen/ 
+
 ├── static/ 
+
 ├── templates/ 
+
 ├── manage.py 
+
 └── requirements.txt
 
 
@@ -29,7 +36,7 @@ restaurant_kitchen/
 
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/PythonToGo/resturant_kitchen_manage.git
     cd restaurant_kitchen
     ```
 
@@ -51,10 +58,18 @@ restaurant_kitchen/
 
 5. **Load initial data**:
     ```sh
-    python manage.py loaddata fixtures/data.json
+    python manage.py loaddata kitchen_db_data.json
     ```
-
-6. **Run the development server**:
+    
+6. **Create SuperUser**:
+    ```sh
+    python manage.py createsuperuser
+    ```
+    - Username: admin.user
+    - Email: admin@user.com
+    - Password: 1qazcde3
+    
+7. **Run the development server**:
     ```sh
     python manage.py runserver
     ```
@@ -63,6 +78,18 @@ restaurant_kitchen/
 
 - Access the application at `http://127.0.0.1:8000/`.
 - Use the admin interface at `http://127.0.0.1:8000/admin/` to manage users and other data.
+
+
+## Demo
+![image](https://github.com/user-attachments/assets/87ab60c5-0256-4922-8864-eaf19dc54d90)
+![image](https://github.com/user-attachments/assets/825f2cd9-67ff-4087-be4c-a10ed49a8a6b)
+![image](https://github.com/user-attachments/assets/6b35f5d7-3b99-48ca-b351-ee95fa585533)
+![image](https://github.com/user-attachments/assets/7994bb0c-5f55-4bac-a5dd-7a092623ac9f)
+![image](https://github.com/user-attachments/assets/f7318073-da41-4f20-a987-08e9809ca832)
+![image](https://github.com/user-attachments/assets/f64d1b6d-bc94-4a2e-995e-fff6431e00d1)
+
+
+
 
 ## Deployment
 
