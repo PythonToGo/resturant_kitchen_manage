@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-8m*+gw+zikt=l60-%j86$5@&#j_&%rj_2vlp7@n$2c8sam7#po
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
+# ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
+ALLOWED_HOSTS = ['restaurant-kitchen-service-6p40.onrender.com']
 
 
 # Application definition
