@@ -11,5 +11,8 @@ python manage.py collectstatic --no-input
 # Apply any outstanding database migrations
 python manage.py migrate
 
+# Load initial data
+python manage.py loaddata kitchen_db_data.json
+
 # create initial superuser
 python manage.py create_initial_superuser
